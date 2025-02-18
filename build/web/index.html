@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="A new Flutter project." />
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="MD Hasibul Hassan" />
+    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <title>MD Hasibul Hassan</title>
+    <link rel="manifest" href="manifest.json" />
+
+    <script>
+        // The value below is injected by flutter build, do not touch.
+
+        window.flutterWebRenderer = "canvaskit";
+
+
+        const serviceWorkerVersion = "2603944750";
+    </script>
+    <!-- This script adds the flutter initialization JS code -->
+    <script src="flutter.js" defer></script>
+    <style>
+        html,
+        body {
+            overscroll-behavior: none;
+            scroll-behavior: smooth;
+            touch-action: manipulation;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .container {
+            margin: 0;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            height: 30vh;
+        }
+
+
+        .container {
+            margin: 0;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            height: 30vh;
+        }
+    </style>
+</head>
+
+<body style="overflow: hidden">
+    <div class="container">
+        <img class="loader" src="assets/loading.gif" />
+    </div>
+    <script>
+        window.addEventListener('load', function (ev) {
+            // Download main.dart.js
+            _flutter.loader.loadEntrypoint({
+                serviceWorker: {
+                    serviceWorkerVersion: serviceWorkerVersion,
+                },
+                onEntrypointLoaded: function (engineInitializer) {
+                    engineInitializer
+                        .initializeEngine()
+                        .then(function (appRunner) {
+                            appRunner.runApp();
+                        });
+                },
+            });
+        });
+    </script>
+    <script>
+        window.addEventListener('flutter-first-frame', function () {
+            var el = document.getElementsByClassName('container')[0];
+            el.remove();
+        });
+    </script>
+</body>
+
+</html>
